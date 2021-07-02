@@ -1,27 +1,22 @@
-var GetSet = /** @class */ (function () {
-    function GetSet(x, y) {
-        this.x = x;
-        this.y = y;
+class GetSet {
+    constructor(_x, _y) {
+        this._x = _x;
+        this._y = _y;
     }
-    GetSet.prototype.draw = function () {
-        console.log(this.x, this.y);
-    };
-    Object.defineProperty(GetSet.prototype, "X", {
-        get: function () {
-            return this.x;
-        },
-        set: function (value) {
-            if (value < 0)
-                throw new Error("Value of x cant be less than 0");
-            this.x = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return GetSet;
-}());
-var obj = new GetSet(10, 20);
+    draw() {
+        console.log(this._x, this._y);
+    }
+    get x() {
+        return this._x;
+    }
+    set x(value) {
+        if (value < 0)
+            throw new Error("Value of x cant be less than 0");
+        this._x = value;
+    }
+}
+let obj = new GetSet(10, 20);
 obj.draw();
-var x = obj.X;
-obj.X = 100;
+let x = obj.x;
+obj.x = 100;
 obj.draw();

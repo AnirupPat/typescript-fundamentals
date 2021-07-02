@@ -1,4 +1,4 @@
-class GetSet {
+export class GetSet {
     constructor(_x, _y) {
         this._x = _x;
         this._y = _y;
@@ -15,8 +15,4 @@ class GetSet {
         this._x = value;
     }
 }
-let obj = new GetSet(10, 20);
-obj.draw();
-let x = obj.x;
-obj.x = 100;
-obj.draw();
+// export default GetSet;
